@@ -21,6 +21,10 @@ header > h1 {
     font-size: 60px;
 }
 
+.Questions {
+    display: none;
+}
+
 .button {
     display: none;
     margin-top: 5%;
@@ -31,9 +35,10 @@ header > h1 {
 
 .Time {
     display: flex;
+    flex-direction: column;
     text-decoration: underline;
     font-size: 25px;
     font-weight: bolder;
-    margin-top: 35%;
-    margin-left: 90%;
+    margin-left: 80%;
+    margin-top: 34%;
 }
