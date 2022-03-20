@@ -11,7 +11,8 @@ span {
 }
 
 #start {
-    height: 15%;
+    font-size: larger;
+    height: 30%;
     width: 15%;
     background-color: chartreuse;
 }
@@ -26,4 +27,13 @@ header > h1 {
     margin-left: 30%;
     margin-bottom: 2%;
     padding: 15px;
+}
+
+.Time {
+    display: flex;
+    text-decoration: underline;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-top: 35%;
+    margin-left: 90%;
 }
