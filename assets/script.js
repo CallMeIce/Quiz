@@ -2,7 +2,7 @@ var startQuiz = document.querySelector("#start")
 var Questions = document.querySelector("nav")
 var header = document.querySelector("header")
 var questionOption = document.querySelector("article")
-var time = document.querySelector("time")
+var time = document.querySelector(".time")
 var questionAppear = document.querySelector(".Questions")
 var selectA = document.querySelector("#buttonA") 
 var selectB = document.querySelector("buttonB")
@@ -14,11 +14,12 @@ var secondsLeft =75;
 //TODO THEN a timer starts and I am presented with a question
 
 startQuiz.addEventListener("click", function() {
-    console.log("click")
     header.style.display = "none";
-    questionOption.classList.remove("article")
+    questionOption.classList.add("article")
     showQuestions();
 })
+
+
 
 //TODO  WHEN I answer a question
 //TODO THEN I am presented with another question
@@ -44,13 +45,16 @@ startQuiz.addEventListener("click", function() {
 
 //*Timer
 
+
 function setTime() {
     var timeInterval = setInterval(function(){
         secondsLeft--;
         time.textContent = "Time-Limit: " + secondsLeft;
-        if (secondsLeft < 0) {
+        if (secondsLeft < 1) {
             clearInterval(timeInterval)
         }
             },1000);
                 }
 setTime();
+
+startQuiz.addEventListener("click", setTime)
