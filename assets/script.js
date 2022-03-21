@@ -2,12 +2,12 @@ var startQuiz = document.querySelector("#start")
 var Questions = document.querySelector("nav")
 var header = document.querySelector("header")
 var questionOption = document.querySelector("article")
-var time = document.querySelector(".time")
 var questionAppear = document.querySelector(".Questions")
 var selectA = document.querySelector("#buttonA") 
 var selectB = document.querySelector("buttonB")
 var selectC = document.querySelector("buttonC")
 var selectD = document.querySelector("buttonD")
+var time = document.querySelector(".time")
 var secondsLeft =75;
 
 //TODO WHEN I click the start button
@@ -19,11 +19,8 @@ startQuiz.addEventListener("click", function() {
     showQuestions();
 })
 
-
-
 //TODO  WHEN I answer a question
 //TODO THEN I am presented with another question
-
 
 
 //TODO WHEN I answer a question incorrectly
@@ -40,7 +37,13 @@ startQuiz.addEventListener("click", function() {
 
 
 
+//*Quiz Questions Variable 
 
+var quizQuestions = [{
+
+    question: "Click the blue one";
+    answers: ["Red.style.color.orange","Yellow.style.color.blue","Orange.style.color.red","Blue.style.color.red"];
+}]
 
 
 //*Timer
