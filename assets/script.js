@@ -14,6 +14,29 @@ var questionQuiz = document.getElementById("closedContainer")
 var questionIndex = 0
 var answerIndex = 0
 
+var quizQuestions = [
+    
+    {    question: "Which is the bretherin of the Pontiac line?",
+        answers: ["Camaro", "Hummer", "Dodge", "Ford"],
+        correct: "Camaro",
+        }, 
+    
+    {   question: "When was the last year that the firebird was made in?",
+        answers: ["1998", "2002", "1968", "2009"],
+        correct: "2002",
+        },
+    
+    {    question: "When did Pontiac get shut down?",
+        answers: ["2002", "2009", "1996", "2006" ],
+       correct: "2009"
+        },
+    
+    {   question: "What was the only year that Pontiac produced T-tops in the Fiero line?",
+        answers: ["1998", "1988", "1984", "1986"],
+        correct: "1988"
+    }]
+    
+
 //TODO WHEN I click the start button
 //TODO THEN a timer starts and I am presented with a question
 
@@ -38,20 +61,14 @@ function showQuestions() {
         var choice = document.createElement("button")
         choice.setAttribute("class", "choice")
         choice.setAttribute("value", options)
+        choice.textContent = options
+        questionQuiz.appendChild(choice)
         }
 }
 
-function showAnswers() {
-    var varAnswers = quizQuestions[answerIndex]
-    answerContainer.textContent = varAnswers.answers
-
-    for (let i = 0; i < varAnswers.question.length; i++) {
-        let  = array[i];
-        
-    }
-}
-
-
+// function correctAnswers(event) {
+//     var 
+// }
 
 //TODO WHEN I answer a question incorrectly
 //TODO THEN time is subtracted from the clock
@@ -69,27 +86,6 @@ function showAnswers() {
 
 //*Quiz Questions Variable 
 
-var quizQuestions = [
-    
-{    question: "Which is the bretherin of the Pontiac line?",
-    answers: ["Camaro", "Hummer", "Dodge", "Ford"],
-    correct: "Camaro",
-    }, 
-
-{   question: "When was the last year that the firebird was made in?",
-    answers: ["1998", "2002", "1968", "2009"],
-    correct: "2002",
-    },
-
-{    question: "When did Pontiac get shut down?",
-    answers: ["2002", "2009", "1996", "2006" ],
-   correct: "2009"
-    },
-
-{   question: "What was the only year that Pontiac produced T-tops in the Fiero line?",
-    answers: ["1998", "1988", "1984", "1986"],
-    correct: "1988"
-}]
 
 
 //*Timer
