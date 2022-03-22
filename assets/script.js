@@ -9,18 +9,35 @@ var selectC = document.querySelector("buttonC")
 var selectD = document.querySelector("buttonD")
 var time = document.querySelector(".time")
 var secondsLeft =75;
+var questionQuiz = document.getElementById("closedContainer")
+var questionIndex = 0
 
 //TODO WHEN I click the start button
 //TODO THEN a timer starts and I am presented with a question
 
-startQuiz.addEventListener("click", function() {
+
+
+function beginQuiz() {
+    setTime();
     header.style.display = "none";
     questionOption.classList.add("article")
     showQuestions();
-})
+}
 
 //TODO  WHEN I answer a question
 //TODO THEN I am presented with another question
+
+function showQuestions() {
+    var varQuestions = quizQuestions[questionIndex]
+    questionQuiz.textContent = varQuestions.question
+
+    for (let i = 0; i < varQuestions.answers.length; i++) {
+        let options = varQuestions.answers[i];
+        var choice = document.createElement("button")
+        choice.setAttribute("class", "choice")
+        choice.setAttribute("value", options)
+        }
+}
 
 
 //TODO WHEN I answer a question incorrectly
@@ -39,10 +56,26 @@ startQuiz.addEventListener("click", function() {
 
 //*Quiz Questions Variable 
 
-var quizQuestions = [{
+var quizQuestions = [
+    
+{    question: "Which is the bretherin of the Pontiac line?",
+    answers: ["Camaro", "Hummer", "Dodge", "Ford"],
+    correct: "Camaro",
+    }, 
 
-    question: "Click the blue one";
-    answers: ["Red.style.color.orange","Yellow.style.color.blue","Orange.style.color.red","Blue.style.color.red"];
+{   question: "When was the last year that the firebird was made in?",
+    answers: ["1998", "2002", "1968", "2009"],
+    correct: "2002",
+    },
+
+{    question: "When did Pontiac get shut down?",
+    answers: ["2002", "2009", "1996", "2006" ],
+   correct: "2009"
+    },
+
+{   question: "What was the only year that Pontiac produced T-tops in the Fiero line?",
+    answers: ["1998", "1988", "1984", "1986"],
+    correct: "1988"
 }]
 
 
@@ -52,12 +85,12 @@ var quizQuestions = [{
 function setTime() {
     var timeInterval = setInterval(function(){
         secondsLeft--;
-        time.textContent = "Time-Limit: " + secondsLeft;
-        if (secondsLeft < 1) {
+        time.textContent = secondsLeft;
+        if (secondsLeft <= 0) {
             clearInterval(timeInterval)
         }
             },1000);
                 }
-setTime();
+// setTime();
 
-startQuiz.addEventListener("click", setTime)
+startQuiz.addEventListener("click", beginQuiz)
