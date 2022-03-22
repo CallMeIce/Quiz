@@ -9,10 +9,13 @@ var selectB = document.querySelector("buttonB")
 var selectC = document.querySelector("buttonC")
 var selectD = document.querySelector("buttonD")
 var time = document.querySelector(".time")
-var secondsLeft =75;
+var secondsLeft =60;
 var questionQuiz = document.getElementById("closedContainer")
 var questionIndex = 0
 var answerIndex = 0
+var choiceAnswer = []
+
+//*Quiz Questions Variable 
 
 var quizQuestions = [
     
@@ -42,6 +45,7 @@ var quizQuestions = [
 
 
 
+
 function beginQuiz() {
     setTime();
     header.style.display = "none";
@@ -53,21 +57,36 @@ function beginQuiz() {
 //TODO THEN I am presented with another question
 
 function showQuestions() {
-    var varQuestions = quizQuestions[questionIndex]
-    questionQuiz.textContent = varQuestions.question
+    var varQuestions 
 
-    for (let i = 0; i < varQuestions.answers.length; i++) {
+    for (let i = 0; i < quizQuestions.length; i++) {
+        varQuestions = quizQuestions[questionIndex]        
+        questionQuiz.textContent = varQuestions.question
         let options = varQuestions.answers[i];
         var choice = document.createElement("button")
         choice.setAttribute("class", "choice")
         choice.setAttribute("value", options)
         choice.textContent = options
         questionQuiz.appendChild(choice)
-        }
+        console.log(choice);
+        questionIndex++
+        } 
+
+    // if (varQuestions === true) {
+    //     return        
+    // }
+
 }
 
-// function correctAnswers(event) {
-//     var 
+
+// function showAnswer() {
+//     var varAnswer = quizQuestions[answerIndex]
+//         questionQuiz.textContent = varAnswer.answers
+
+//     for (let i = 0; i < varAnswer.answers.length; i++) {
+//         let = array[i];
+        
+//     }
 // }
 
 //TODO WHEN I answer a question incorrectly
@@ -81,12 +100,6 @@ function showQuestions() {
 
 //TODO WHEN the game is over
 //TODO THEN I can save my initials and my score
-
-
-
-//*Quiz Questions Variable 
-
-
 
 //*Timer
 
