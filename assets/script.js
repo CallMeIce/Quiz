@@ -3,6 +3,7 @@ var Questions = document.querySelector("nav")
 var header = document.querySelector("header")
 var questionOption = document.querySelector("article")
 var questionAppear = document.querySelector(".Questions")
+var answerContainer = document.querySelector(".Hidden")
 var selectA = document.querySelector("#buttonA") 
 var selectB = document.querySelector("buttonB")
 var selectC = document.querySelector("buttonC")
@@ -11,6 +12,7 @@ var time = document.querySelector(".time")
 var secondsLeft =75;
 var questionQuiz = document.getElementById("closedContainer")
 var questionIndex = 0
+var answerIndex = 0
 
 //TODO WHEN I click the start button
 //TODO THEN a timer starts and I am presented with a question
@@ -38,6 +40,17 @@ function showQuestions() {
         choice.setAttribute("value", options)
         }
 }
+
+function showAnswers() {
+    var varAnswers = quizQuestions[answerIndex]
+    answerContainer.textContent = varAnswers.answers
+
+    for (let i = 0; i < varAnswers.question.length; i++) {
+        let  = array[i];
+        
+    }
+}
+
 
 
 //TODO WHEN I answer a question incorrectly
