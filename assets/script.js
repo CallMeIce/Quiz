@@ -5,9 +5,9 @@ var questionOption = document.querySelector("article")
 var questionAppear = document.querySelector(".Questions")
 var answerContainer = document.querySelector(".Hidden")
 var selectA = document.querySelector("#buttonA") 
-var selectB = document.querySelector("buttonB")
-var selectC = document.querySelector("buttonC")
-var selectD = document.querySelector("buttonD")
+var selectB = document.querySelector("#buttonB")
+var selectC = document.querySelector("#buttonC")
+var selectD = document.querySelector("#buttonD")
 var time = document.querySelector(".time")
 var secondsLeft =60;
 var questionQuiz = document.getElementById("closedContainer")
@@ -15,13 +15,18 @@ var questionIndex = 0
 var answerIndex = 0
 var choiceAnswer = []
 
+// selectA.addEventListener("click", optionOne)
+// selectB.addEventListener("click", optionTwo)
+// selectC.addEventListener("click", optionThree)
+// selectD.addEventListener("click", optionFour)
+
 //*Quiz Questions Variable 
 
 var quizQuestions = [
     
     {    question: "Which is the bretherin of the Pontiac line?",
-        answers: ["Camaro", "Hummer", "Dodge", "Ford"],
-        correct: "Camaro",
+        answers: ["Chevy", "Hummer", "Dodge", "Ford"],
+        correct: "Chevy",
         }, 
     
     {   question: "When was the last year that the firebird was made in?",
@@ -57,26 +62,30 @@ function beginQuiz() {
 //TODO THEN I am presented with another question
 
 function showQuestions() {
-    var varQuestions 
+    var varQuestions = quizQuestions[questionIndex]
+    questionQuiz.textContent = varQuestions.question
 
-    for (let i = 0; i < quizQuestions.length; i++) {
-        varQuestions = quizQuestions[questionIndex]        
-        questionQuiz.textContent = varQuestions.question
+    for (let i = 0; i < varQuestions.answers.length; i++) {            
         let options = varQuestions.answers[i];
         var choice = document.createElement("button")
         choice.setAttribute("class", "choice")
         choice.setAttribute("value", options)
         choice.textContent = options
         questionQuiz.appendChild(choice)
-        console.log(choice);
-        questionIndex++
-        } 
+        console.log(options);
+        }
+    }
+
+    // function optionOne() {
+        
+    // }
+
 
     // if (varQuestions === true) {
     //     return        
     // }
 
-}
+
 
 
 // function showAnswer() {
