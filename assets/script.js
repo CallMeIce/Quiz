@@ -15,7 +15,7 @@ var questionIndex = 0
 var answerIndex = 0
 var choiceAnswer = []
 
-// selectA.addEventListener("click", optionOne)
+selectA.addEventListener("click", optionOne)
 // selectB.addEventListener("click", optionTwo)
 // selectC.addEventListener("click", optionThree)
 // selectD.addEventListener("click", optionFour)
@@ -76,9 +76,13 @@ function showQuestions() {
         }
     }
 
-    // function optionOne() {
-        
-    // }
+    function optionOne() {
+        if (quizQuestions[i].correct) {
+            alert = "You got it correct"
+        } else {
+            alert = "You're wrong"
+        }
+    }
 
 
     // if (varQuestions === true) {
