@@ -8,6 +8,7 @@ var selectA = document.querySelector("#buttonA")
 var selectB = document.querySelector("#buttonB")
 var selectC = document.querySelector("#buttonC")
 var selectD = document.querySelector("#buttonD")
+var answer = document.querySelector(".answer")
 var time = document.querySelector(".time")
 var secondsLeft =60;
 var questionQuiz = document.getElementById("closedContainer")
@@ -15,7 +16,8 @@ var questionIndex = 0
 var answerIndex = 0
 var choiceAnswer = []
 
-selectA.addEventListener("click", optionOne)
+
+// selectA.addEventListener("click", optionOne)
 // selectB.addEventListener("click", optionTwo)
 // selectC.addEventListener("click", optionThree)
 // selectD.addEventListener("click", optionFour)
@@ -73,20 +75,26 @@ function showQuestions() {
         choice.textContent = options
         questionQuiz.appendChild(choice)
         console.log(options);
+        choice.onclick = feedback
         }
+
     }
 
-    function optionOne() {
-        if (quizQuestions[i].correct) {
-            alert = "You got it correct"
-        } else {
-            alert = "You're wrong"
+    function feedback() {
+        if (this.value !== quizQuestions[questionIndex].correct) {
+            secondsLeft = secondsLeft - 5
+            if (secondsLeft < 0) {
+                alert = 'Game Over'
+            }
+            answer.textContent = "You got it wrong"
+        }else {
+            alert ("You got it correct")
         }
-    }
-
+        questionIndex += 1
+    } 
 
     // if (varQuestions === true) {
-    //     return        
+        
     // }
 
 
